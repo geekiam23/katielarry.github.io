@@ -96,7 +96,8 @@
 /* ----- Section -----*/
 
 .section {
-  padding: 200px 0 61px;
+  padding: 100px 0;
+  /* padding: 200px 0 61px; */
   min-height: 100vh;
 }
 
@@ -316,7 +317,7 @@ blockquote:last-child {
 .wrapper {
   /* min-height: 100vh; */
   /* position: relative; */
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 /* ------------------------------------------------
@@ -856,10 +857,12 @@ b {
   margin-left: -503px;
   margin-top: 10px;
 }
+
 .logo.animated-in {
   opacity: 1;
   visibility: visible;
 }
+
 .logo-appd2 {
   /* background-image: url(../css/images2/logo_black_appd.png); */
 
@@ -915,16 +918,6 @@ b {
   display: block;
 }
 
-/* .logo-grabbem {
-    background-image: url(../css/images/logo-grabbem@2x.png);
-    width: 121px;
-    height: 24px;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    font-size: 0;
-    line-height: 0;
-    display: block;
-} */
 @media (max-width: 767px) {
   .bagswithapurpose {
     width: 88px;
@@ -1013,7 +1006,7 @@ b {
   -webkit-flex: 0 1 100%;
   -ms-flex: 0 1 100%;
   flex: 0 1 100%;
-  position: relative;
+  /* position: relative; */
   left: 38px;
   padding-top: 8px;
   margin-left: -47px;
@@ -1117,11 +1110,6 @@ b {
   margin-top: 12px;
 }
 
-/* .section--secondary .logo-grabbem {
-    position: relative;
-    left: -5px; */
-
-/*  */
 .section--secondary p {
   max-width: 400px;
 }
@@ -1138,47 +1126,19 @@ b {
 .section section--about {
   color: whit;
 }
-/* .section--green3 {
-	background: url(images2/appd_background_light.jpg);
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-} */
-/* .section--purple2 {
-	background: url(images2/appd_background_black.png);
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-} */
-/* .section--lightblue {
-	background-image: linear-gradient(135deg, #4B81FF 100%, #8DF6D7 100%);
-} */
+
 .section--black {
   background-color: #000000;
 }
-/* .section--green2 {
-	background: url(images2/value_proptool_background.jpg);
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-} */
+
 .section--white {
   background-color: #fff;
 }
-/* .section--yellow {
-	background-image: linear-gradient(57deg, #ffffff 0%, #ffffff 100%);
-} */
-/* .section--blue {
-	background: rgb(1, 176, 229);
-	background: linear-gradient(to right, #000000 0%, #000000 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#01b0e5', endColorstr='#38e6ff', GradientType=1);
-} */
+
 .section--about {
   background-image: white;
 }
+
 @media (max-width: 1340px) {
   .section .section__content {
     margin-right: 0;
@@ -1191,7 +1151,7 @@ b {
 }
 @media (max-width: 1200px) {
   .section .section__aside {
-    margin-right: 0;
+    /* margin-right: 0; */
   }
   .section--primary .section__aside {
     margin-left: 0;
@@ -1327,17 +1287,24 @@ b {
     padding-right: 0;
   }
 }
-.section__aside {
-  height: auto;
-  overflow: auto;
-  /* background-size: 20px; */
-  /* margin-top: -15px; */
-}
+/* .section__aside { */
+/* height: auto; */
+/* overflow: auto; */
+/* background-size: 20px; */
+/* margin-top: -15px; */
+/* } */
 
 .projects_pic {
+  position: initial;
   float: right;
   height: auto;
 }
+
+/* .clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+} */
 
 #uxprocessimage {
   /* width: 750px; */
