@@ -1,4 +1,9 @@
-* {
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  outline: 0;
   color: #3f3b50;
 }
 
@@ -34,11 +39,6 @@ body {
 }
 /* end fancy css*/
 
-header {
-  /*height: 555px;*/
-  margin: 0 6% 100px 6%;
-}
-
 main {
   padding: 0 13%;
   max-width: 1450px;
@@ -51,12 +51,12 @@ video {
   /* max-width: 80%;
   margin-top: 40px;
   margin-bottom: 40px; */
-display: block;
-margin-left: auto;
-margin-right: auto;
-width: 100%;
-/* padding-top: 100px; */
-/* padding-bottom: 100px; */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  /* padding-top: 100px; */
+  /* padding-bottom: 100px; */
 }
 
 /* navigation */
@@ -64,9 +64,9 @@ width: 100%;
   display: none;
 }
 
-nav {
+/* nav {
   padding: 15px 95px;
-}
+} */
 
 nav ul {
   float: right;
@@ -109,6 +109,331 @@ section {
   width: 15px;
 }
 
+.wrapper {
+  overflow: hidden;
+}
+
+/* ----- Header -----*/
+
+.header {
+  /* background: rgba(0, 0, 0, 0.85); */
+  position: absolute;
+  /* top: 0; */
+  left: 0;
+  right: 0;
+  z-index: 10;
+  /* visibility: hidden; */
+}
+
+.header .header__nav {
+  position: relative;
+  display: inline;
+  /* padding: 60px 53px 45px 0;
+  text-align: right;
+  transition: padding-top 0.3s, padding-bottom 0.3s, opacity 0.5s,
+    visibility 0.5s, margin-top 0.3s; */
+}
+
+/* .header .header__nav {
+  padding-top: 35px;
+  padding-bottom: 25px;
+} */
+
+/* .header .logo {
+  margin-top: 0;
+} */
+
+@media (max-width: 767px) {
+  .header .header__nav {
+    padding: 0 20px 0;
+    margin-top: 0x;
+  }
+  .header .logo {
+    /* margin-top: 0; */
+    /* position: static; */
+    /* margin: 0 auto; */
+    /* -webkit-transform: none; */
+    /* -ms-transform: none; */
+    /* transform: none; */
+  }
+  .header {
+    padding: 18px 0;
+    transition: padding 0.3s;
+  }
+  .header.fixed {
+    padding: 1px 0;
+  }
+  .header .header__nav {
+    padding-top: 0;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 414px) {
+  .header .header__nav {
+    padding: 0 20px 0;
+    margin-top: 0x;
+    visibility: hidden;
+  }
+  .header .logo {
+    /* margin-top: 0; */
+    /* position: static; */
+    /* margin: 0 auto; */
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+  .header {
+    padding: 20px 0;
+    transition: padding 0.3s;
+  }
+  .header.fixed {
+    padding: 13px 0;
+  }
+  .header .header__nav {
+    padding-top: 0;
+    margin-top: 0;
+  }
+  .nav a {
+    color: #000;
+    font-weight: lighter;
+    font-size: 18px;
+    letter-spacing: 0px;
+    font-weight: 400;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: lighter;
+    opacity: 1;
+    transition: opacity 0.3s;
+  }
+}
+
+/* ----- Nav -----*/
+
+.nav.animated-in {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav a {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+}
+
+.nav li {
+  display: inline-block;
+  opacity: 0.2;
+  visibility: hidden;
+  -webkit-transform: translateY(-25px);
+  -ms-transform: translateY(-25px);
+  transform: translateY(-25px);
+  transition: opacity 0.7s, visibility 0.7s, transform 0.7s,
+    -webkit-transform 0.7s;
+}
+
+.nav li.animated-in {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.nav li:last-child {
+  transition-delay: 0.4s;
+}
+
+.nav li:nth-last-child(1) {
+  transition-delay: 0.45s;
+}
+
+.nav li:nth-last-child(2) {
+  transition-delay: 0.55s;
+}
+
+.nav li:nth-last-child(3) {
+  transition-delay: 0.65s;
+}
+
+.nav li:nth-last-child(4) {
+  transition-delay: 0.75s;
+}
+
+.nav li + li {
+  margin-left: 46px;
+}
+
+@media (max-width: 767px) {
+  .nav {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 100%;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.1s, visibility 0.1s;
+  }
+  .nav.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  .nav ul {
+    display: block;
+    margin: 0 15px;
+  }
+  .nav li {
+    display: block;
+    /* margin-left: 0; */
+    margin-bottom: 15px;
+    margin-top: 5px;
+  }
+  /* .nav li + li {
+    margin-left: 0;
+    margin-top: 11px;
+  } */
+}
+
+.shell {
+  margin: 20px;
+}
+/* ------------------------------------------------
+-------------------------------------------------
+-------------------------- Logo -----------
+------------------------------------------------------
+----------------------------------------------------*/
+.logo {
+  float: left;
+  background-image: url(../css/images/logo.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 21px;
+  height: 32px;
+  display: inline;
+  font-size: 0;
+  line-height: 0;
+  position: relative;
+  /* margin-left: 20px; */
+  /* left: 50%; */
+  /* -webkit-transform: translate(-50%, -50%); */
+  /* -ms-transform: translate(-50%, -50%); */
+  /* transform: translate(-50%, -50%); */
+  /* top: 66%; */
+  /* left: 10%; */
+  /* margin-top: 2px; */
+  /* opacity: 0; */
+  /* visibility: hidden; */
+  /* transition: margin-top 0.3s, opacity 1s, visibility 1s; */
+  /* transition-delay: 0.5s; */
+  /* margin-left: -503px; */
+  /* margin-top: 10px; */
+}
+
+.logo.animated-in {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ------------------------------------------------------------ *\
+	Keyframes
+\* ------------------------------------------------------------ */
+
+@-webkit-keyframes bounce {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: -10px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+/* Standard syntax */
+
+@keyframes bounce {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: -10px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+.burger-menu {
+  display: none;
+  width: 20px;
+  /* position: absolute; */
+  position: relative;
+  float: right;
+  /* top: 50%; */
+  padding-top: 20px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 31px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s, visibility 1s;
+  transition-delay: 0.25s;
+}
+
+.burger-menu.animated-in {
+  opacity: 1;
+  visibility: visible;
+}
+
+.burger-menu.active span:nth-child(1) {
+  top: 7px;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  transition: top 0.3s, -webkit-transform 0.3s 0.3s;
+  transition: top 0.3s, transform 0.3s 0.3s;
+  transition: top 0.3s, transform 0.3s 0.3s, -webkit-transform 0.3s 0.3s;
+}
+
+.burger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+  top: -7px;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  transition: top 0.3s, -webkit-transform 0.3s 0.3s;
+  transition: top 0.3s, transform 0.3s 0.3s;
+  transition: top 0.3s, transform 0.3s 0.3s, -webkit-transform 0.3s 0.3s;
+}
+
+.burger-menu span {
+  position: relative;
+  display: block;
+  height: 3px;
+  top: 0;
+  background: #000;
+  transition: 0.3s;
+}
+
+.burger-menu span + span {
+  margin-top: 4px;
+}
+
+@media (max-width: 767px) {
+  .burger-menu {
+    display: block;
+  }
+}
+
 /***---------------------------***/
 /****------- typography ------****/
 /***---------------------------***/
@@ -131,17 +456,17 @@ a:hover {
 /* header  typography*/
 /* general typography */
 h1 {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 80px;
 }
 
 h2 {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 45px;
 }
 
 h3 {
-  font-family:'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   text-transform: uppercase;
   font-size: 24px;
   font-weight: bolder;
@@ -156,7 +481,7 @@ h4 {
 }
 
 .h4 {
-  font-family:'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 0.05rem;
@@ -166,7 +491,7 @@ h4 {
   /* text-align: center; */
 }
 .design-role {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   letter-spacing: 0.07rem;
   /* margin: 0 auto; */
   padding: 4px 1px 0 0;
@@ -185,7 +510,6 @@ p {
 
 li {
   font-size: 18px;
-
 }
 
 .light {
@@ -196,14 +520,14 @@ li {
 
 /* common text-styles typography*/
 .caseStudy-text {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 18px;
   letter-spacing: 0.04rem;
   line-height: 35px;
 }
 
 .desc {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 18px;
   letter-spacing: 0.025rem;
   line-height: 33px;
@@ -212,7 +536,7 @@ li {
 .label {
   color: #979797;
   text-transform: uppercase;
-  font-family:'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 40px;
   letter-spacing: 0.07rem;
   margin-top: 25px;
@@ -274,17 +598,6 @@ h3.home-page {
   font-size: 44px;
   letter-spacing: 0.2rem;
   line-height: 50px;
-}
-
-/* Images and backgrounds and logo */
-.logo {
-  display: inline;
-  /* height: 132px; */
-  margin-left: 113px;
-  /* margin-top: 130px; */
-  position: relative;
-  top: 15px;
-  z-index: 1;
 }
 
 .feat-bg {
@@ -451,8 +764,7 @@ img.feat-mobile-screen {
 .vertical-line {
   border-left: 2px solid #9ba0b3;
   padding: 0 4%; */
-  /*margin-left: 4%;*/
-}
+/*margin-left: 4%;*/
 
 .quote {
   color: #9ba0b3;
@@ -475,7 +787,7 @@ img.feat-mobile-screen {
 
 /* challenges insights and solutions */
 .num-list {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   letter-spacing: 0.04rem;
   line-height: normal;
   font-size: 18px;
@@ -502,7 +814,7 @@ img.feat-mobile-screen {
 
 /* user research */
 .percent-desc {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 18px;
   letter-spacing: 0.05rem;
   line-height: 20px;
@@ -530,7 +842,7 @@ h2.user-research {
 
 .persona-l .caseStudy-text,
 .persona-r .caseStudy-text {
-  font-family:'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 18px;
   letter-spacing: 0.01rem;
   line-height: 30px;
@@ -667,7 +979,7 @@ h2.user-research {
 
 .prototypes a p {
   color: #f07e81;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .prototypes a:hover p {
@@ -1057,9 +1369,9 @@ footer > div > .social-media {
 }
 
 @media screen and (max-width: 1385px) {
-  .logo {
+  /* .logo {
     margin-left: 0%;
-  }
+  } */
   .opening {
     margin-left: 11%;
     width: 600px;
@@ -1124,9 +1436,9 @@ footer > div > .social-media {
 }
 
 @media screen and (max-width: 1080px) {
-  header {
+  /* header {
     margin: 0 6% 10px 6%;
-  }
+  } */
 
   main {
     max-width: 90%;
@@ -1137,7 +1449,7 @@ footer > div > .social-media {
   }
 
   h3 {
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", sans-serif;
     font-weight: bolder;
     font-size: 20px;
     letter-spacing: 0.01rem;
@@ -1185,10 +1497,10 @@ footer > div > .social-media {
     text-align: center;
   } */
 
-  .logo {
+  /* .logo {
     margin-left: 2%;
     margin-top: 80px;
-  }
+  } */
 
   .opening {
     margin-left: 17%;
@@ -1296,9 +1608,9 @@ footer > div > .social-media {
     text-decoration: none;
     line-height: 23px;
   }
-  header {
+  /* header {
     margin: 0 10% 50px 10%;
-  }
+  } */
 
   main {
     padding: 0 5%;
@@ -1350,9 +1662,9 @@ footer > div > .social-media {
   /***** tab - nav ***********/
   /******************************/
 
-  nav {
+  /* nav {
     padding: 15px 5%;
-  }
+  } */
 
   nav a {
     display: inline-block;
@@ -1408,7 +1720,7 @@ footer > div > .social-media {
   .label {
     font-size: 30px;
     /* letter-spacing: 0.1rem; */
-      margin:0 auto;
+    margin: 0 auto;
   }
 
   /* text for homepage only */
@@ -1440,10 +1752,10 @@ footer > div > .social-media {
     text-align: center;
   }
 
-  .logo {
+  /* .logo {
     margin-left: 35%;
     margin-bottom: 20px;
-  }
+  } */
 
   /* end homepage type styles */
 
@@ -1516,7 +1828,7 @@ footer > div > .social-media {
 
   /* challenges insights and solutions */
   .num-list {
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", sans-serif;
     letter-spacing: 0.03rem;
     line-height: 24px;
     font-size: 16px;
@@ -1527,7 +1839,7 @@ footer > div > .social-media {
 
   /* Role deliverables and tools */
   .med-text {
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", sans-serif;
     line-height: 25px;
   }
 
@@ -1541,7 +1853,7 @@ footer > div > .social-media {
   /* assumptions */
   /* user research */
   .percent-desc {
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", sans-serif;
     font-size: 16px;
     letter-spacing: 0.05rem;
     line-height: 15px;
@@ -2153,9 +2465,9 @@ footer > div > .social-media {
   }
   .logo {
     display: block;
-    height: 132px;
+    height: 32px;
 
-    margin: 30px auto;
+    /* margin: 30px auto; */
     position: unset;
     z-index: 1;
   }
@@ -2219,7 +2531,7 @@ footer > div > .social-media {
     line-height: 22px;
   }
   .percent-desc {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 18px;
     letter-spacing: 0.04rem;
     line-height: 18px;

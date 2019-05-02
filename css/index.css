@@ -310,9 +310,9 @@ blockquote:last-child {
   margin: auto;
 } */
 
-.shell-fluid {
+/* .shell-fluid {
   max-width: none;
-}
+} */
 
 .wrapper {
   /* min-height: 100vh; */
@@ -1151,9 +1151,9 @@ b {
   }
 }
 @media (max-width: 1200px) {
-  .section .section__aside {
-    /* margin-right: 0; */
-  }
+  /* .section .section__aside {
+    margin-right: 0;
+  } */
   .section--primary .section__aside {
     margin-left: 0;
     margin-right: 40px;
