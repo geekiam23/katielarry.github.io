@@ -1218,7 +1218,7 @@ body {
   display: inline-block;
   vertical-align: top;
   width: 46%;
-  margin: 20px 30px 0 0;
+  margin-top: 20px;
 }
 .container__text {
   margin: 15px;
@@ -3070,9 +3070,11 @@ font-size: 0;
     left: 5%;
     width: 90%;
   }
-  .section-label,
-  .textbox {
-    /* width: 90%; */
+  .swot-analysis {
+    display: inline-block;
+  }
+  .link-container{
+    text-align: center
   }
   .num-list {
     line-height: 26px;
