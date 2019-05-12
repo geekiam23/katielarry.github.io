@@ -886,7 +886,7 @@ b {
   height: auto;
   margin-bottom: 90px;
   margin-right: auto;
-  margin-left: 26px;
+  /* margin-left: 26px; */
 }
 
 #uiprocessimage {
@@ -1105,6 +1105,9 @@ b {
     height: 16px;
   }
 
+  .oneplace_image-container {
+    height: 600px;
+  }
   .section {
     padding-top: 44px;
     padding-bottom: 41px;
